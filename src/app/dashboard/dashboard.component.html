@@ -1,0 +1,11 @@
+<div class="dashboard">
+    <h3>Top Countries</h3>
+    <div class="grid grid-pad">
+      <a *ngFor="let country of countries" class="all"
+      routerLink="/detail/{{country.id}}">
+        <div class="module country">
+          <h4>{{country.name}}</h4>
+        </div>
+      </a>
+    </div>
+</div>

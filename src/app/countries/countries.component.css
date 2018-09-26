@@ -1,0 +1,132 @@
+
+
+[class*='col-'] {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+  [class*='col-']:last-of-type {
+    padding-right: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  *, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  h3 {
+    text-align: center; margin-bottom: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  h4 {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+  }
+  .grid {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  .all{
+    width: 100%;
+    padding-top: 10px;
+  }
+  .module {
+    padding: 20px;
+    text-align: center;
+    color: #eee;
+    max-height: 120px;
+    min-width: 120px;
+    background-color: darkturquoise;
+    border-radius: 2px;
+  }
+  .module:hover {
+    background-color: #eee;
+    cursor: pointer;
+    color: #607d8b;
+  }
+  .grid-pad {
+    padding: 10px 0;
+  }
+  .grid-pad > [class*='col-']:last-of-type {
+    padding-right: 20px;
+  }
+  @media (max-width: 600px) {
+    .module {
+      font-size: 10px;
+      max-height: 75px; }
+  }
+  @media (max-width: 1024px) {
+    .grid {
+      margin: 0;
+    }
+    .module {
+      min-width: 60px;
+    }
+  }
+
+
+/* .list {
+    background-color: #ccc;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+}
+
+.list li {
+    background-color: whitesmoke;
+    padding: 15px;
+    margin: 3px;
+    width: 20%;
+}
+
+.list li:hover {
+    background-color: #DDD;
+}
+.list li.selected {
+    background-color: darkturquoise;
+}
+
+.list li a {
+    text-decoration: none;
+}
+
+div {
+    padding: 5px;
+}
+
+ul {
+    padding: 5px;
+}
+
+li a {
+    list-style: none;
+    font-weight: bold;
+    padding: 5px;
+}
+
+li span {
+    font-weight: normal;
+}
+
+input {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input:focus {
+    border: 3px solid #555;
+} */

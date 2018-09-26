@@ -1,0 +1,127 @@
+<div [hidden]="submitted" class="register-form container">
+  <h1>Register Form</h1>
+  <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" class="form-control" id="name" 
+      required
+      [(ngModel)]="model.name" name="name" #name="ngModel"
+      >
+        <div [hidden]="name.valid || name.pristine"
+        class="alert alert-danger">
+        Name is required
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Apellido</label>
+      <input type="text" class="form-control" id="lastName"
+      required
+      [(ngModel)]="model.lastname" name="lastname" #lastname="ngModel">
+      <div [hidden]="lastname.valid || lastname.pristine"
+      class="alert alert-danger">
+      Lastname is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dni">DNI</label>
+      <input type="number" class="form-control" id="dni"
+      required
+      [(ngModel)]="model.dni" name="dni" #dni="ngModel">
+        <div [hidden]="dni.valid || dni.pristine"
+        class="alert alert-danger">
+        DNI is required
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo Electronico</label>
+      <input type="email" class="form-control" id="email"
+      required
+      [(ngModel)]="model.email" name="email" #email="ngModel">
+        <div [hidden]="email.valid || email.pristine"
+        class="alert alert-danger">
+        E-mail is required
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Telefono</label>
+      <input type="number" class="form-control" id="phone"
+      [(ngModel)]="model.phone" name="phone">
+    </div>
+
+    <div class="form-group">
+      <label for="address">Dirección</label>
+      <input type="text" class="form-control" id="address"
+      [(ngModel)]="model.address" name="address">
+    </div>
+    
+    <div class="form-group">
+      <label for="password">Contraseña</label>
+      <input type="password" class="form-control" id="password"
+      required
+      minlength="8" maxlength="16" 
+      [(ngModel)]="model.password" name="password" #password="ngModel">
+
+      <div *ngIf="password.invalid && (password.dirty || password.touched)"
+        class="alert alert-danger">
+
+      <div *ngIf="password.errors.required">
+        Password is required.
+      </div>
+      <div *ngIf="password.errors.minlength">
+        Password must be at least 8 characters long.
+      </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="repeat-password">Confirmar Contraseña</label>
+      <input type="password" class="form-control" id="repeat-password"
+      required
+      [(ngModel)]="model.confirm" name="confirm" #confirm="ngModel">
+        <div [hidden]="confirm.valid || confirm.pristine"
+        class="alert alert-danger">
+        Please confirm your password
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!registerForm.form.valid">Submit</button>
+
+  </form>
+</div>
+
+<!-- <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Form</button> -->
+
+<div [hidden]="!submitted">
+  <h2>Te has registrado correctamente!</h2>
+  <h3>Tus datos son los siguientes:</h3>
+  <div class="row">
+    <div class="col-xs-3">Nombre</div>
+    <div class="col-xs-9  pull-left">{{ model.name }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Apellido</div>
+    <div class="col-xs-9 pull-left">{{ model.lastname }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">DNI</div>
+    <div class="col-xs-9 pull-left">{{ model.dni }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Correo Electronico</div>
+    <div class="col-xs-9 pull-left">{{ model.email }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Telefono</div>
+    <div class="col-xs-9 pull-left">{{ model.phone }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Dirección</div>
+    <div class="col-xs-9 pull-left">{{ model.address }}</div>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+</div>

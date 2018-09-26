@@ -1,0 +1,20 @@
+<!-- <div class="list">
+    <ul>
+        <li *ngFor="let country of countries" routerLink="/detail/{{country.id}}">
+            <span class="">{{country.name}}</span>
+        </li>
+    </ul>
+</div> -->
+
+
+<div class="dashboard">
+    <h3>List of Countries</h3>
+    <div class="grid grid-pad">
+      <a *ngFor="let country of countries" class="all"
+      routerLink="/detail/{{country.id}}">
+        <div class="module country">
+          <h4>{{country.name}}</h4>
+        </div>
+      </a>
+    </div>
+</div>
